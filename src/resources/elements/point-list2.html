@@ -1,0 +1,33 @@
+<template>
+  <h4 class="ui dividing header"> PointsR </h4>
+  <table class="ui celled table segment">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Description</th>
+      <th>Location</th>
+      <th>id</th>
+    </tr>
+    </thead>
+    <tbody>
+    <div>${pointsR.length}</div>
+    <tr repeat.for="point of points">
+      <td>
+        ${rawPoint}
+      </td>
+      <td>
+        ${point.category}
+      </td>
+      <td>
+        ${rawPoint.description}
+      </td>
+      <td>
+        ${rawPoint.location.lng}, ${rawPoint.location.lat}
+      </td>
+      <td>${rawPoint._id}</td>
+      <td><a route-href="route: addcomment; params.bind: {id: rawPoint.name }" ><i><b>Add Comment</b></i></a></td>
+    </tr>
+    </tbody>
+  </table>
+</template>
